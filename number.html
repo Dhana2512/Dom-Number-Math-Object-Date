@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>number</title>
+</head>
+<body>
+    <script>
+        const number = 1234;
+        //constructor
+            console.log(number.constructor);
+        //isfinite
+            console.log(Number.isFinite(126),'isfinite');
+            console.log(Number.isFinite('126'),'isfinite');
+        //isInteger
+            console.log(Number.isInteger('ert'),'integer');
+            console.log(Number.isInteger(54),'integer');
+        //isNaN
+            console.log(Number.isNaN(NaN),'NaN');
+        //issafeinteger
+            console.log(Number.isSafeInteger(564),'issafeinteger');
+        //MAX_VALUE
+            console.log(Number.MAX_VALUE);
+        //MIN_VALUE
+            console.log(Number.MIN_VALUE);
+        //negative_infinity
+            console.log(Number.NEGATIVE_INFINITY);
+        //NaN
+            console.log(Number.NaN);
+        //positive_infinity
+            console.log(Number.POSITIVE_INFINITY);
+        //prototype
+            Number.prototype.div = function() {
+            return this.valueOf() / 2;
+            }; 
+            const n = 100;
+            const res = n.div();
+            console.log(res);
+        //toexponential
+            console.log(number.toExponential(2));
+        //toprecision
+            console.log(number.toPrecision(2),'pre');
+        //tostring
+            console.log(number.toString());
+    </script>
+</body>
+</html>

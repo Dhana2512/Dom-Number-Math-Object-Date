@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom</title>
+</head>
+<body>
+    <table id='user-table'  class='html-table'></table>
+    <!-- <p onclick="getvalue(event)"> Event</p> -->
+    <p id='para'>paragraph</p>
+    <script>
+        // let table = document.getElementsByClassName('html-table');
+        function getvalue(ele){
+            alert('clicked'); 
+        }
+        const ele = document.getElementById('para');
+        ele.addEventListener('click',getvalue);
+            ele.innerHTML = 'dhana';
+            const mark = document.createElement('mark');
+                mark.innerHTML = 'lakshmi';
+                ele.appendChild(mark);
+       
+        // console.log(table);
+        //DOM 
+            
+    </script>
+</body>
+</html>
