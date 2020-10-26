@@ -10,7 +10,24 @@
     <script>
         const a = {'name':'dhana','age':'22'};
         //object Methods
-            Object.defineProperty(a, property, descriptor)
+        const Target = { a: 1, b: 2, c: 3}
+        const source = { c: 4, d: 5, e: 6 }
+            //assign
+                // const returntarget = Object.assign({},Target,source);
+                    const returntarget = Object.assign(Target,source);
+                    console.log(Target);
+                    console.log(returntarget);
+                //create
+                    source.d = 8
+                    console.log(source);
+                //freeze
+                    Object.freeze(source);
+                //keys
+                    console.log(Object.keys(Target));
+                //values
+                    console.log(Object.values(Target));
+
+
     </script>
 </body>
 </html>

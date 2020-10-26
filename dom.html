@@ -5,25 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dom</title>
+    <style>
+        a:focus{
+            color: green;
+        }
+        .mystyle
+        {
+            color:red;
+            background-color: yellow;
+            width:300px;
+            height:50px
+        }
+    </style>
 </head>
 <body>
     <table id='user-table'  class='html-table'></table>
+    <button id='mybtn' onclick="btn()">try it</button>
+    <p id='pa'>change</p>
+    <a id="link" href="https://www.w3schools.com/">W3Schools</a>
+    <a id="link1" href="https://www.w3schools.com/">visit W3Schools</a>
+    <input type="button" onclick="getfocus()" value="Get focus">
+    <input type="button" onclick="losefocus()" value="Lose focus">  
     <!-- <p onclick="getvalue(event)"> Event</p> -->
     <p id='para'>paragraph</p>
+    <div id='mydiv'>
+            lakshmi
+        </div>
+    <p id='children'></p>
+    <ul id='list'>
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+    <ul id='list3'>
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+    <ul id='list1'>
+            <li>Mango</li>
+            <li>Guva</li>
+        </ul>
+    <div id='divid'>
+        am dhana
+    </div>
+    <div id="myDIV1">
+            <b>Information about this div:</b><br>
+            Height: 250px<br>
+            Width: 400px<br>
+            padding: 10px<br>
+            margin: 15px<br>
+            border: 5px<br>
+            <p id="demo1"></p>
+         
+
+          </div>
+    <input type='checkbox' id = 'myclick' onmouseover=myfunction() onclick="alert('clickevent occured')">
+    <button onclick="clonenode()">clonenode</button>
+    <a class="anchors" id="myAnchor" href="https://www.w3schools.com/html/">HTML</a>
+    <button onclick="id()">id</p>
     <script>
         // let table = document.getElementsByClassName('html-table');
         function getvalue(ele){
             alert('clicked'); 
         }
-        const ele = document.getElementById('para');
-        ele.addEventListener('click',getvalue);
-            ele.innerHTML = 'dhana';
-            const mark = document.createElement('mark');
-                mark.innerHTML = 'lakshmi';
-                ele.appendChild(mark);
-       
-        // console.log(table);
+        // const ele = document.getElementById('para');
+        // ele.addEventListener('click',getvalue);
+            // ele.innerHTML = 'dhana';
+            // const mark = document.createElement('mark');
+            //     mark.innerHTML = 'lakshmi';
+            //     ele.appendChild(mark);
+            //     const query = document.querySelector('#para');
+        // console.log(query);
         //DOM 
+            //accesskey
+                document.getElementById('link').accessKey = "w";
+            //addeventlistener
+                document.getElementById('para').addEventListener('click',getvalue);
+            //appendchild
+                const node = document.createElement('li');
+                const textnode = document.createTextNode('Kiwi');
+                    node.appendChild(textnode);
+                    document.getElementById('list').appendChild(node);
+            //attributes
+                console.log(document.getElementById('user-table').attributes.length);
+                console.log(document.getElementById('user-table').attributes[0].name);
+                console.log(document.getElementById('user-table').attributes[1].name);
+            //blur & focus
+                function getfocus(){
+                    console.log(document.getElementById('link1').focus());
+
+                }
+                function losefocus(){
+                     console.log(document.getElementById('link1').blur());
+
+                }
+            //childelementcount
+                console.log(document.getElementById('list').childElementCount);
+            //childnodes
+                function childnodes(){
+                    let a = document.body.childNodes;
+                    let txt ='';
+                    for(let i=0; i<a.length; i++){
+                        txt = txt + a[i].nodeName ;
+                    }
+                document.getElementById('user-table').innerHTML = txt;
+                    // console.log(txt);
+                }
+                childnodes();
+            //children
+            function children(){
+                    let a = document.body.children;
+                    let txt1 ='';
+                    for(let i=0; i<a.length; i++){
+                        txt1 = txt1 + a[i].tagName + '<br>' ;
+                    }
+                document.getElementById('children').innerHTML = txt1
+                }
+                children();
+            //classlist
+            function classlist(){
+                document.getElementById('divid').classList.add('mystyle');
+            }
+                classlist();
+            //classname
+            function classname(){
+                document.getElementById('mydiv').className = 'mystyle';
+            }
+                classname();
+            //click
+                function myfunction(){
+                    document.getElementById('myclick').click();
+                }
+            //clientheight
+            function myFunction1() {
+                var ele = document.getElementById("myDIV1");
+                var text = "Height including padding: " + ele.clientHeight + "px";
+                text += "Width including padding: " + ele.clientWidth + "px";
+                document.getElementById("demo1").innerHTML = text;
+                }
+                myFunction1();
+            //clonenode
+                function clonenode(){
+                    const item = document.getElementById('list1').lastChild;
+                    const cln = item.cloneNode(true);
+                    document.getElementById('list3').appendChild(cln);
+                }
+            //id
+            function id() {
+                const t = document.getElementsByClassName("anchors").id;
+                document.getElementById("demo").innerHTML = t;
+
+            }
+            //innerhtml
+                document.getElementById('para').innerHTML = 'paragraph changed';
+            //innertext
+            function btn(){
+               const l = document.getElementById("mybtn").innertext ;
+               document.getElementById("pa").innerHTML = x;  
+            }
+            
+
+
+                
+                
+
+
             
     </script>
 </body>
